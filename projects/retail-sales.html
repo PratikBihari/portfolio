@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Sales Forecasting | Pratika Bihari</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Project Detail Page Specific Styles */
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 100px 0 50px;
+            text-align: center;
+        }
+        
+        .project-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .meta-item i {
+            font-size: 1.2rem;
+        }
+        
+        .project-content {
+            padding: 60px 0;
+        }
+        
+        .project-section {
+            margin-bottom: 50px;
+        }
+        
+        .project-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .project-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .project-section p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .project-image {
+            width: 100%;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .tech-item {
+            background-color: var(--background-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .result-card {
+            background-color: var(--background-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .result-label {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+        
+        .back-link:hover {
+            color: var(--secondary-color);
+            transform: translateX(-5px);
+        }
+        
+        .code-block {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: monospace;
+            line-height: 1.5;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+            
+            .project-meta {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="project-header">
+        <div class="container">
+            <h1 class="project-title">Retail Sales Forecasting</h1>
+            <p class="project-subtitle">Time series analysis to predict future sales and optimize inventory management</p>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Completed: June 2022</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-user"></i>
+                    <span>Client: Global Retail Inc.</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Duration: 3 months</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="project-content">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+            
+            <section class="project-section">
+                <h2>Project Overview</h2>
+                <p>Global Retail Inc., a multinational retail chain with over 500 stores worldwide, was facing challenges with inventory management. They were experiencing both overstocking (leading to increased storage costs and waste) and stockouts (resulting in lost sales and customer dissatisfaction).</p>
+                <p>The company needed a reliable forecasting system that could predict future sales with high accuracy, allowing them to optimize their inventory levels and improve overall operational efficiency.</p>
+                <img src="../images/retail-analytics.jpg" alt="Retail Sales Dashboard" class="project-image">
+            </section>
+            
+            <section class="project-section">
+                <h2>Technical Approach</h2>
+                <p>After a thorough analysis of the client's historical sales data spanning 5 years, I implemented a time series forecasting solution using the following approach:</p>
+                
+                <h3>Data Preprocessing</h3>
+                <p>The raw sales data required extensive cleaning and preprocessing to address issues such as missing values, outliers, and inconsistent formatting. I also performed feature engineering to incorporate relevant external factors like seasonality, holidays, and promotional events.</p>
+                
+                <h3>Model Development</h3>
+                <p>I evaluated several time series forecasting models, including:</p>
+                <ul>
+                    <li>ARIMA (AutoRegressive Integrated Moving Average)</li>
+                    <li>SARIMA (Seasonal ARIMA)</li>
+                    <li>Prophet (Facebook's forecasting tool)</li>
+                    <li>LSTM (Long Short-Term Memory) neural networks</li>
+                </ul>
+                
+                <p>After comparing their performance on validation data, SARIMA emerged as the most effective model for this specific use case, providing the best balance between accuracy and interpretability.</p>
+                
+                <div class="code-block">
+                    <pre>
+# Python code snippet for SARIMA model implementation
+import pandas as pd
+import numpy as np
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+from sklearn.metrics import mean_absolute_percentage_error
+
+# Train SARIMA model
+model = SARIMAX(train_data['sales'], 
+                order=(2, 1, 2),
+                seasonal_order=(1, 1, 1, 52),
+                enforce_stationarity=False,
+                enforce_invertibility=False)
+
+results = model.fit()
+
+# Make predictions
+forecast = results.get_forecast(steps=forecast_horizon)
+forecast_ci = forecast.conf_int()
+
+# Evaluate model
+y_pred = forecast.predicted_mean
+mape = mean_absolute_percentage_error(test_data['sales'], y_pred)
+print(f"Model MAPE: {mape:.2%}")
+                    </pre>
+                </div>
+                
+                <h3>Technologies Used</h3>
+                <div class="tech-stack">
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">Pandas</span>
+                    <span class="tech-item">NumPy</span>
+                    <span class="tech-item">Statsmodels</span>
+                    <span class="tech-item">Scikit-learn</span>
+                    <span class="tech-item">Matplotlib</span>
+                    <span class="tech-item">Tableau</span>
+                </div>
+            </section>
+            
+            <section class="project-section">
+                <h2>Results & Impact</h2>
+                <p>The implemented forecasting model achieved remarkable results for the client:</p>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">92%</div>
+                        <div class="result-label">Forecast Accuracy</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">15%</div>
+                        <div class="result-label">Reduction in Inventory Costs</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">23%</div>
+                        <div class="result-label">Decrease in Stockouts</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">$2.4M</div>
+                        <div class="result-label">Annual Savings</div>
+                    </div>
+                </div>
+                
+                <p>Beyond the quantitative benefits, the project also delivered several qualitative improvements:</p>
+                <ul>
+                    <li>Enhanced decision-making capabilities for inventory managers</li>
+                    <li>Improved customer satisfaction due to better product availability</li>
+                    <li>Reduced environmental impact from decreased product waste</li>
+                    <li>Knowledge transfer to the client's analytics team, enabling them to maintain and update the model</li>
+                </ul>
+            </section>
+            
+            <section class="project-section">
+                <h2>Challenges & Solutions</h2>
+                <p>Throughout the project, several challenges emerged that required innovative solutions:</p>
+                
+                <h3>Data Quality Issues</h3>
+                <p>The historical sales data contained numerous inconsistencies and gaps, particularly for newer store locations. I developed a robust data imputation strategy using similar store profiles to fill these gaps without introducing bias.</p>
+                
+                <h3>Handling Special Events</h3>
+                <p>Promotional events, holidays, and other special occasions significantly impacted sales patterns but were difficult to incorporate into traditional time series models. I created custom features to capture these effects and integrated them into the forecasting framework.</p>
+                
+                <h3>Model Scalability</h3>
+                <p>With 500+ stores and thousands of products, computational efficiency was a concern. I implemented a hierarchical forecasting approach that balanced accuracy with performance, allowing the system to generate forecasts for all store-product combinations within reasonable time constraints.</p>
+            </section>
+            
+            <section class="project-section">
+                <h2>Conclusion</h2>
+                <p>The retail sales forecasting project demonstrates how advanced time series analysis can transform inventory management practices, leading to significant cost savings and operational improvements. By combining statistical modeling with domain expertise, I delivered a solution that not only addressed the client's immediate needs but also provided a foundation for ongoing optimization.</p>
+                <p>The success of this project led to an expanded engagement with Global Retail Inc., focusing on demand planning and supply chain optimization across their entire network.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><img src="../images/logo.png" alt="Pratika Bihari Logo"></div>
+                <p>&copy; 2023 Pratika Bihari. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#projects">Projects</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html> 

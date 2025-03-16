@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Segmentation Analysis | Pratika Bihari</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Project Detail Page Specific Styles */
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 100px 0 50px;
+            text-align: center;
+        }
+        
+        .project-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .meta-item i {
+            font-size: 1.2rem;
+        }
+        
+        .project-content {
+            padding: 60px 0;
+        }
+        
+        .project-section {
+            margin-bottom: 50px;
+        }
+        
+        .project-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .project-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .project-section p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .project-image {
+            width: 100%;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .tech-item {
+            background-color: var(--background-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .result-card {
+            background-color: var(--background-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .result-label {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+        
+        .back-link:hover {
+            color: var(--secondary-color);
+            transform: translateX(-5px);
+        }
+        
+        .code-block {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: monospace;
+            line-height: 1.5;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .segment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .segment-card {
+            background-color: var(--background-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .segment-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .segment-card ul {
+            padding-left: 20px;
+        }
+        
+        .segment-card li {
+            margin-bottom: 8px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+            
+            .project-meta {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="project-header">
+        <div class="container">
+            <h1 class="project-title">Customer Segmentation Analysis</h1>
+            <p class="project-subtitle">Using clustering techniques to identify distinct customer groups for targeted marketing</p>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Completed: November 2022</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-user"></i>
+                    <span>Client: E-commerce Platform Inc.</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Duration: 2 months</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="project-content">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+            
+            <section class="project-section">
+                <h2>Project Overview</h2>
+                <p>E-commerce Platform Inc., an online retailer with over 2 million registered customers, was struggling with a one-size-fits-all marketing approach that resulted in low conversion rates and inefficient marketing spend. The company had collected extensive customer data but lacked the analytical framework to transform this data into actionable customer insights.</p>
+                <p>The client needed a data-driven customer segmentation solution that could identify distinct customer groups with similar behaviors, preferences, and value to the business. This segmentation would enable targeted marketing campaigns, personalized product recommendations, and more efficient allocation of marketing resources.</p>
+                <img src="../images/customer-segmentation.jpg" alt="Customer Segmentation Analysis Dashboard" class="project-image">
+            </section>
+            
+            <section class="project-section">
+                <h2>Technical Approach</h2>
+                <p>I implemented a comprehensive customer segmentation solution using advanced analytics and machine learning techniques, following these key steps:</p>
+                
+                <h3>Data Collection & Preparation</h3>
+                <p>I gathered and integrated customer data from multiple sources, including:</p>
+                <ul>
+                    <li>Transaction history (purchases, returns, cart abandonment)</li>
+                    <li>Browsing behavior (page views, time spent, search queries)</li>
+                    <li>Customer demographics (age, gender, location)</li>
+                    <li>Customer service interactions</li>
+                    <li>Email engagement metrics</li>
+                </ul>
+                <p>After thorough data cleaning and feature engineering, I created a rich customer profile dataset with over 30 behavioral and demographic attributes for each customer.</p>
+                
+                <h3>Exploratory Data Analysis</h3>
+                <p>I conducted extensive exploratory analysis to understand the distribution of key customer attributes and identify potential relationships between variables. This included:</p>
+                <ul>
+                    <li>Recency, Frequency, Monetary (RFM) analysis</li>
+                    <li>Purchase pattern analysis across product categories</li>
+                    <li>Correlation analysis between customer attributes</li>
+                    <li>Outlier detection and treatment</li>
+                </ul>
+                
+                <h3>Feature Selection & Dimensionality Reduction</h3>
+                <p>To improve the quality of clustering and reduce computational complexity, I:</p>
+                <ul>
+                    <li>Selected the most relevant features based on business objectives</li>
+                    <li>Applied Principal Component Analysis (PCA) to reduce dimensionality while preserving information</li>
+                    <li>Standardized features to ensure equal contribution to the clustering algorithm</li>
+                </ul>
+                
+                <h3>Clustering Implementation</h3>
+                <p>I evaluated several clustering algorithms, including:</p>
+                <ul>
+                    <li>K-means clustering</li>
+                    <li>Hierarchical clustering</li>
+                    <li>DBSCAN (Density-Based Spatial Clustering)</li>
+                    <li>Gaussian Mixture Models</li>
+                </ul>
+                
+                <p>After comparing their performance using silhouette scores, within-cluster variance, and business interpretability, K-means emerged as the most effective approach for this particular dataset.</p>
+                
+                <div class="code-block">
+                    <pre>
+# Python code snippet for K-means clustering implementation
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+import matplotlib.pyplot as plt
+
+# Standardize the features
+scaler = StandardScaler()
+scaled_features = scaler.fit_transform(customer_features)
+
+# Apply PCA for dimensionality reduction
+pca = PCA(n_components=0.95)  # Retain 95% of variance
+reduced_features = pca.fit_transform(scaled_features)
+
+# Determine optimal number of clusters using silhouette scores
+silhouette_scores = []
+for k in range(2, 11):
+    kmeans = KMeans(n_clusters=k, random_state=42, n_init=10)
+    cluster_labels = kmeans.fit_predict(reduced_features)
+    silhouette_avg = silhouette_score(reduced_features, cluster_labels)
+    silhouette_scores.append(silhouette_avg)
+    print(f"For n_clusters = {k}, the silhouette score is {silhouette_avg:.3f}")
+
+# Plot silhouette scores
+plt.figure(figsize=(10, 6))
+plt.plot(range(2, 11), silhouette_scores, marker='o')
+plt.xlabel('Number of clusters')
+plt.ylabel('Silhouette Score')
+plt.title('Silhouette Score vs. Number of Clusters')
+plt.show()
+
+# Apply K-means with optimal number of clusters
+optimal_k = 5  # Based on silhouette analysis and business interpretability
+kmeans = KMeans(n_clusters=optimal_k, random_state=42, n_init=10)
+customer_segments = kmeans.fit_predict(reduced_features)
+
+# Add segment labels to original data
+customer_data['segment'] = customer_segments
+                    </pre>
+                </div>
+                
+                <h3>Segment Profiling & Visualization</h3>
+                <p>After identifying the optimal customer segments, I conducted in-depth profiling to understand the distinctive characteristics of each segment. This involved:</p>
+                <ul>
+                    <li>Calculating descriptive statistics for each segment across key attributes</li>
+                    <li>Conducting statistical tests to identify significant differences between segments</li>
+                    <li>Creating visual representations of segment profiles using radar charts and heatmaps</li>
+                    <li>Developing business-friendly segment personas with actionable insights</li>
+                </ul>
+                
+                <h3>Technologies Used</h3>
+                <div class="tech-stack">
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">Pandas</span>
+                    <span class="tech-item">Scikit-learn</span>
+                    <span class="tech-item">K-means Clustering</span>
+                    <span class="tech-item">PCA</span>
+                    <span class="tech-item">Matplotlib</span>
+                    <span class="tech-item">Seaborn</span>
+                    <span class="tech-item">Tableau</span>
+                </div>
+            </section>
+            
+            <section class="project-section">
+                <h2>Customer Segments Identified</h2>
+                <p>The analysis revealed five distinct customer segments, each with unique characteristics and business implications:</p>
+                
+                <div class="segment-grid">
+                    <div class="segment-card">
+                        <h4>Segment 1: High-Value Loyalists (18%)</h4>
+                        <ul>
+                            <li>Highest average order value ($120+)</li>
+                            <li>Purchase frequency: 2+ orders per month</li>
+                            <li>Broad category engagement</li>
+                            <li>Low price sensitivity</li>
+                            <li>High email engagement rates</li>
+                            <li>Predominantly urban, age 35-50</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="segment-card">
+                        <h4>Segment 2: Potential Enthusiasts (24%)</h4>
+                        <ul>
+                            <li>Moderate average order value ($75-90)</li>
+                            <li>Growing purchase frequency</li>
+                            <li>Category-specific engagement</li>
+                            <li>Responsive to promotions</li>
+                            <li>High mobile app usage</li>
+                            <li>Predominantly suburban, age 25-40</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="segment-card">
+                        <h4>Segment 3: Occasional Shoppers (31%)</h4>
+                        <ul>
+                            <li>Lower average order value ($40-60)</li>
+                            <li>Infrequent purchases (1-2 per quarter)</li>
+                            <li>Seasonal shopping patterns</li>
+                            <li>High price sensitivity</li>
+                            <li>Moderate email engagement</li>
+                            <li>Diverse demographics</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="segment-card">
+                        <h4>Segment 4: New Customers (15%)</h4>
+                        <ul>
+                            <li>Variable order values</li>
+                            <li>Limited purchase history (< 3 months)</li>
+                            <li>Exploratory browsing behavior</li>
+                            <li>High cart abandonment rate</li>
+                            <li>Responsive to first-time buyer promotions</li>
+                            <li>Skew younger (18-30)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="segment-card">
+                        <h4>Segment 5: At-Risk Customers (12%)</h4>
+                        <ul>
+                            <li>Declining engagement</li>
+                            <li>No purchases in last 3+ months</li>
+                            <li>Previously regular customers</li>
+                            <li>Low email open rates</li>
+                            <li>High support ticket history</li>
+                            <li>Mixed demographics</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="project-section">
+                <h2>Results & Impact</h2>
+                <p>The customer segmentation solution delivered significant value to the client:</p>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">32%</div>
+                        <div class="result-label">Increase in Email Campaign Conversion</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">27%</div>
+                        <div class="result-label">Improvement in Marketing ROI</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">18%</div>
+                        <div class="result-label">Growth in Customer Retention</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">$1.8M</div>
+                        <div class="result-label">Additional Annual Revenue</div>
+                    </div>
+                </div>
+                
+                <p>Beyond the quantitative benefits, the segmentation analysis also delivered several qualitative improvements:</p>
+                <ul>
+                    <li>Enhanced understanding of customer needs and preferences</li>
+                    <li>More personalized customer experiences across touchpoints</li>
+                    <li>Improved product development based on segment preferences</li>
+                    <li>More efficient allocation of marketing resources</li>
+                    <li>Data-driven decision-making culture across marketing teams</li>
+                </ul>
+            </section>
+            
+            <section class="project-section">
+                <h2>Segment-Specific Strategies</h2>
+                <p>Based on the segmentation analysis, I developed tailored strategies for each customer segment:</p>
+                
+                <h3>High-Value Loyalists</h3>
+                <p>For this most valuable segment, I recommended:</p>
+                <ul>
+                    <li>Premium loyalty program with exclusive benefits</li>
+                    <li>Early access to new products and collections</li>
+                    <li>Personalized product recommendations based on purchase history</li>
+                    <li>VIP customer service channel</li>
+                    <li>Referral incentives to leverage their network</li>
+                </ul>
+                
+                <h3>Potential Enthusiasts</h3>
+                <p>For this growth-oriented segment, I recommended:</p>
+                <ul>
+                    <li>Category expansion incentives to broaden their engagement</li>
+                    <li>Tiered loyalty program to encourage increased purchase frequency</li>
+                    <li>Mobile app-exclusive promotions</li>
+                    <li>Cross-selling campaigns based on category affinities</li>
+                </ul>
+                
+                <h3>Occasional Shoppers</h3>
+                <p>For this price-sensitive segment, I recommended:</p>
+                <ul>
+                    <li>Limited-time promotions to create urgency</li>
+                    <li>Value-oriented messaging highlighting product benefits</li>
+                    <li>Seasonal engagement campaigns aligned with their shopping patterns</li>
+                    <li>Bundle offers to increase average order value</li>
+                </ul>
+                
+                <h3>New Customers</h3>
+                <p>For this exploratory segment, I recommended:</p>
+                <ul>
+                    <li>Onboarding email series to educate about product offerings</li>
+                    <li>First-time buyer incentives for second purchase</li>
+                    <li>Simplified navigation and product discovery features</li>
+                    <li>Cart abandonment recovery campaigns</li>
+                </ul>
+                
+                <h3>At-Risk Customers</h3>
+                <p>For this declining engagement segment, I recommended:</p>
+                <ul>
+                    <li>Win-back campaigns with compelling offers</li>
+                    <li>Feedback surveys to identify pain points</li>
+                    <li>Reactivation incentives based on previous purchase preferences</li>
+                    <li>Simplified return/exchange process to address potential service issues</li>
+                </ul>
+            </section>
+            
+            <section class="project-section">
+                <h2>Challenges & Solutions</h2>
+                <p>Throughout the project, several challenges emerged that required innovative solutions:</p>
+                
+                <h3>Data Integration</h3>
+                <p>The client's data was scattered across multiple systems with inconsistent customer identifiers. To address this, I:</p>
+                <ul>
+                    <li>Developed a robust customer identity resolution framework</li>
+                    <li>Implemented data quality checks and cleansing procedures</li>
+                    <li>Created a unified customer data schema</li>
+                </ul>
+                
+                <h3>Feature Selection</h3>
+                <p>With over 50 potential customer attributes, determining the most relevant features for segmentation was challenging. I addressed this by:</p>
+                <ul>
+                    <li>Conducting feature importance analysis using Random Forest</li>
+                    <li>Applying domain expertise to select business-relevant attributes</li>
+                    <li>Testing different feature combinations and evaluating segment quality</li>
+                </ul>
+                
+                <h3>Segment Stability</h3>
+                <p>Initial segmentation attempts produced unstable clusters that changed significantly with small data variations. To improve stability, I:</p>
+                <ul>
+                    <li>Implemented ensemble clustering techniques</li>
+                    <li>Used bootstrapping to validate cluster robustness</li>
+                    <li>Developed a hybrid approach combining RFM analysis with behavioral clustering</li>
+                </ul>
+                
+                <h3>Actionability</h3>
+                <p>Ensuring the segments were not just statistically valid but also actionable for marketing teams was crucial. I addressed this by:</p>
+                <ul>
+                    <li>Conducting workshops with marketing stakeholders to refine segment definitions</li>
+                    <li>Creating detailed segment personas with clear marketing implications</li>
+                    <li>Developing segment-specific strategy playbooks</li>
+                </ul>
+            </section>
+            
+            <section class="project-section">
+                <h2>Conclusion</h2>
+                <p>The customer segmentation project transformed E-commerce Platform Inc.'s approach to customer engagement, shifting from a mass-marketing strategy to a targeted, personalized approach. By identifying distinct customer segments and their unique characteristics, the company was able to tailor its marketing efforts, product recommendations, and customer service approaches to meet the specific needs of each group.</p>
+                <p>The success of this project led to an expanded engagement with the client, including the development of a real-time segmentation engine that dynamically updates customer segments based on behavioral changes, enabling even more responsive and personalized customer experiences.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><img src="../images/logo.png" alt="Pratika Bihari Logo"></div>
+                <p>&copy; 2023 Pratika Bihari. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#projects">Projects</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html> 

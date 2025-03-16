@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction | Pratika Bihari</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Project Detail Page Specific Styles */
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 100px 0 50px;
+            text-align: center;
+        }
+        
+        .project-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .meta-item i {
+            font-size: 1.2rem;
+        }
+        
+        .project-content {
+            padding: 60px 0;
+        }
+        
+        .project-section {
+            margin-bottom: 50px;
+        }
+        
+        .project-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .project-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .project-section p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .project-image {
+            width: 100%;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .tech-item {
+            background-color: var(--background-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .result-card {
+            background-color: var(--background-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .result-label {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+        
+        .back-link:hover {
+            color: var(--secondary-color);
+            transform: translateX(-5px);
+        }
+        
+        .code-block {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: monospace;
+            line-height: 1.5;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+            
+            .project-meta {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="project-header">
+        <div class="container">
+            <h1 class="project-title">Customer Churn Prediction</h1>
+            <p class="project-subtitle">Machine learning model to identify at-risk customers and reduce churn</p>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Completed: December 2022</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-user"></i>
+                    <span>Client: TelecomX</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Duration: 3 months</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="project-content">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+            
+            <section class="project-section">
+                <h2>Project Overview</h2>
+                <p>TelecomX, a telecommunications provider with over 5 million subscribers, was experiencing a concerning increase in customer churn rate. The company was losing valuable customers to competitors without understanding the underlying reasons or having the ability to proactively identify at-risk customers.</p>
+                <p>The client needed a predictive solution that could identify customers likely to churn before they actually did, allowing the retention team to implement targeted intervention strategies and reduce overall churn rate.</p>
+                <img src="../images/churn-prediction.jpg" alt="Customer Churn Prediction Dashboard" class="project-image">
+            </section>
+            
+            <section class="project-section">
+                <h2>Technical Approach</h2>
+                <p>I developed a comprehensive churn prediction solution using machine learning techniques, following these key steps:</p>
+                
+                <h3>Data Collection & Preparation</h3>
+                <p>I gathered and integrated data from multiple sources, including:</p>
+                <ul>
+                    <li>Customer demographics and account information</li>
+                    <li>Service usage patterns (calls, data, messaging)</li>
+                    <li>Billing and payment history</li>
+                    <li>Customer service interactions</li>
+                    <li>Network quality metrics</li>
+                </ul>
+                <p>After extensive data cleaning and feature engineering, I created a rich dataset with over 50 potential predictors of churn behavior.</p>
+                
+                <h3>Exploratory Data Analysis</h3>
+                <p>I conducted thorough exploratory analysis to understand the relationships between various factors and churn behavior. Key insights included:</p>
+                <ul>
+                    <li>Customers with frequent billing issues were 3x more likely to churn</li>
+                    <li>Service outages increased churn probability by 45%</li>
+                    <li>Contract type was a strong predictor (month-to-month contracts had 5x higher churn)</li>
+                    <li>Customer tenure showed a non-linear relationship with churn probability</li>
+                </ul>
+                
+                <h3>Model Development</h3>
+                <p>I evaluated several machine learning algorithms, including:</p>
+                <ul>
+                    <li>Logistic Regression</li>
+                    <li>Random Forest</li>
+                    <li>Gradient Boosting</li>
+                    <li>Support Vector Machines</li>
+                    <li>Neural Networks</li>
+                </ul>
+                
+                <p>After comparing their performance using cross-validation, Random Forest emerged as the most effective model, providing the best balance between accuracy, interpretability, and computational efficiency.</p>
+                
+                <div class="code-block">
+                    <pre>
+# Python code snippet for Random Forest model implementation
+import pandas as pd
+import numpy as np
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.metrics import classification_report, roc_auc_score, confusion_matrix
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(
+    features, target, test_size=0.25, random_state=42, stratify=target
+)
+
+# Define hyperparameter grid
+param_grid = {
+    'n_estimators': [100, 200, 300],
+    'max_depth': [None, 10, 20, 30],
+    'min_samples_split': [2, 5, 10],
+    'min_samples_leaf': [1, 2, 4],
+    'class_weight': ['balanced', 'balanced_subsample']
+}
+
+# Perform grid search with cross-validation
+grid_search = GridSearchCV(
+    RandomForestClassifier(random_state=42),
+    param_grid=param_grid,
+    cv=5,
+    scoring='roc_auc',
+    n_jobs=-1
+)
+
+grid_search.fit(X_train, y_train)
+
+# Get best model
+best_model = grid_search.best_estimator_
+
+# Evaluate on test set
+y_pred_proba = best_model.predict_proba(X_test)[:, 1]
+y_pred = best_model.predict(X_test)
+
+print(f"ROC-AUC Score: {roc_auc_score(y_test, y_pred_proba):.4f}")
+print(f"Classification Report:\n{classification_report(y_test, y_pred)}")
+                    </pre>
+                </div>
+                
+                <h3>Feature Importance Analysis</h3>
+                <p>I analyzed feature importance to identify the key drivers of churn, which provided valuable business insights and helped focus retention efforts on the most impactful factors.</p>
+                
+                <h3>Model Deployment</h3>
+                <p>I deployed the model as an interactive dashboard that allowed the retention team to:</p>
+                <ul>
+                    <li>View a ranked list of customers by churn probability</li>
+                    <li>Understand the specific factors contributing to each customer's churn risk</li>
+                    <li>Track the effectiveness of retention interventions over time</li>
+                    <li>Simulate the impact of different retention strategies</li>
+                </ul>
+                
+                <h3>Technologies Used</h3>
+                <div class="tech-stack">
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">Pandas</span>
+                    <span class="tech-item">Scikit-learn</span>
+                    <span class="tech-item">Random Forest</span>
+                    <span class="tech-item">Flask</span>
+                    <span class="tech-item">SQL</span>
+                    <span class="tech-item">Tableau</span>
+                </div>
+            </section>
+            
+            <section class="project-section">
+                <h2>Results & Impact</h2>
+                <p>The churn prediction model delivered significant value to the client:</p>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">88%</div>
+                        <div class="result-label">Prediction Accuracy</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">23%</div>
+                        <div class="result-label">Reduction in Churn Rate</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">$3.2M</div>
+                        <div class="result-label">Annual Revenue Saved</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">35%</div>
+                        <div class="result-label">Increase in Retention ROI</div>
+                    </div>
+                </div>
+                
+                <p>Beyond the quantitative benefits, the project also delivered several qualitative improvements:</p>
+                <ul>
+                    <li>Enhanced understanding of customer behavior and churn drivers</li>
+                    <li>More targeted and personalized retention strategies</li>
+                    <li>Improved allocation of retention resources to high-value customers</li>
+                    <li>Data-driven culture shift in the retention department</li>
+                </ul>
+            </section>
+            
+            <section class="project-section">
+                <h2>Challenges & Solutions</h2>
+                <p>Throughout the project, several challenges emerged that required innovative solutions:</p>
+                
+                <h3>Class Imbalance</h3>
+                <p>The dataset had a significant class imbalance, with churned customers representing only about 15% of the total. To address this, I implemented:</p>
+                <ul>
+                    <li>SMOTE (Synthetic Minority Over-sampling Technique) to generate synthetic examples of the minority class</li>
+                    <li>Class weighting in the model to penalize misclassification of the minority class more heavily</li>
+                    <li>Threshold optimization to balance precision and recall</li>
+                </ul>
+                
+                <h3>Feature Selection</h3>
+                <p>With over 50 potential predictors, there was a risk of overfitting and computational inefficiency. I implemented a robust feature selection process using:</p>
+                <ul>
+                    <li>Recursive Feature Elimination with Cross-Validation (RFECV)</li>
+                    <li>Permutation importance analysis</li>
+                    <li>Domain knowledge to validate statistical findings</li>
+                </ul>
+                
+                <h3>Model Interpretability</h3>
+                <p>While complex models like Random Forest can achieve high accuracy, they can be difficult to interpret. To make the model more transparent and actionable, I:</p>
+                <ul>
+                    <li>Implemented SHAP (SHapley Additive exPlanations) values to explain individual predictions</li>
+                    <li>Created partial dependence plots to visualize the relationships between features and churn probability</li>
+                    <li>Developed a simplified rule-based system derived from the model for quick reference by retention agents</li>
+                </ul>
+            </section>
+            
+            <section class="project-section">
+                <h2>Conclusion</h2>
+                <p>The customer churn prediction project transformed TelecomX's approach to customer retention, shifting from reactive to proactive strategies. By identifying at-risk customers before they churned and understanding the specific factors driving their dissatisfaction, the company was able to implement targeted interventions that significantly reduced churn rate and preserved millions in annual revenue.</p>
+                <p>The success of this project led to an expanded engagement with TelecomX, including the development of additional predictive models for customer lifetime value estimation, service upgrade propensity, and network optimization.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><img src="../images/logo.png" alt="Pratika Bihari Logo"></div>
+                <p>&copy; 2023 Pratika Bihari. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#projects">Projects</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html> 
