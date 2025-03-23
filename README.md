@@ -2,6 +2,11 @@
 
 A responsive and visually appealing portfolio website for a senior data analyst, showcasing skills, experience, and data analysis projects.
 
+## Recent Updates
+- Added favicon for better brand recognition across browsers
+- Added two new projects: Supply Chain Optimization and Sentiment Analysis Dashboard
+- Optimized site for GitHub Pages hosting
+
 ## Features
 
 - Modern and responsive design that works on all devices
