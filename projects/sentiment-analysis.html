@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Dashboard | Pratika Bihari</title>
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="../images/logo.png">
+    <link rel="shortcut icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="project-header">
+        <div class="container">
+            <nav>
+                <div class="logo"><a href="../index.html"><img src="../images/logo.png" alt="Pratika Bihari Logo"></a></div>
+                <ul class="nav-links">
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#experience">Experience</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project-detail">
+        <div class="container">
+            <div class="project-intro">
+                <h1>Sentiment Analysis Dashboard</h1>
+                <div class="project-meta">
+                    <span><i class="fas fa-calendar"></i> 2022</span>
+                    <span><i class="fas fa-tag"></i> Natural Language Processing</span>
+                    <span><i class="fas fa-user"></i> Data Science Lead</span>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <div class="project-hero">
+                    <img src="../images/customer-segmentation.jpg" alt="Sentiment Analysis Dashboard Project">
+                </div>
+
+                <div class="project-description">
+                    <h2>Project Overview</h2>
+                    <p>For a consumer electronics manufacturer, I designed and implemented an NLP-based sentiment analysis tool that processed over 50,000 customer reviews across multiple platforms. This solution enabled the client to identify product improvement areas that ultimately led to increased customer satisfaction scores.</p>
+
+                    <h2>Business Problem</h2>
+                    <p>The client faced several challenges with customer feedback:
+                    <ul>
+                        <li>Overwhelmed by large volumes of unstructured feedback across multiple channels</li>
+                        <li>Unable to quantify sentiment trends over time</li>
+                        <li>Difficulty identifying specific product features causing negative reactions</li>
+                        <li>No systematic way to prioritize product improvements based on customer feedback</li>
+                    </ul>
+                    </p>
+
+                    <h2>Approach & Methodology</h2>
+                    <ol>
+                        <li><strong>Data Collection:</strong> Scraped customer reviews from e-commerce websites, app stores, and social media platforms</li>
+                        <li><strong>Text Preprocessing:</strong> Performed tokenization, lemmatization, and removal of stop words</li>
+                        <li><strong>Sentiment Analysis:</strong> Implemented BERT-based deep learning models to classify text sentiment</li>
+                        <li><strong>Topic Modeling:</strong> Used LDA to identify key themes and product features mentioned in reviews</li>
+                        <li><strong>Dashboard Development:</strong> Created an interactive visualization dashboard using Plotly and Dash</li>
+                    </ol>
+
+                    <h2>Tools & Technologies</h2>
+                    <div class="tech-stack">
+                        <span>Python (NLTK, spaCy)</span>
+                        <span>Natural Language Processing</span>
+                        <span>Deep Learning (BERT)</span>
+                        <span>Plotly & Dash</span>
+                        <span>AWS Comprehend</span>
+                    </div>
+
+                    <h2>Results & Impact</h2>
+                    <div class="results">
+                        <div class="result-item">
+                            <div class="result-number">50K+</div>
+                            <div class="result-label">Reviews processed</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">15%</div>
+                            <div class="result-label">Increase in satisfaction scores</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">92%</div>
+                            <div class="result-label">Sentiment classification accuracy</div>
+                        </div>
+                    </div>
+
+                    <h2>Key Challenges & Solutions</h2>
+                    <div class="challenges">
+                        <div class="challenge">
+                            <h3>Multilingual Reviews</h3>
+                            <p>Customer feedback was in multiple languages. Implemented language detection and used appropriate NLP models for each language.</p>
+                        </div>
+                        <div class="challenge">
+                            <h3>Sarcasm & Context</h3>
+                            <p>Traditional sentiment analysis struggled with sarcasm and contextual nuances. Fine-tuned the BERT model on domain-specific data to improve accuracy.</p>
+                        </div>
+                        <div class="challenge">
+                            <h3>Real-time Analysis</h3>
+                            <p>Client needed near real-time analysis of new reviews. Implemented a streaming architecture to process and analyze new reviews as they arrived.</p>
+                        </div>
+                    </div>
+                    
+                    <h2>Insights Generated</h2>
+                    <p>The sentiment analysis dashboard revealed several critical insights:</p>
+                    <ul>
+                        <li>Battery life was consistently the most mentioned negative feature (27% of complaints)</li>
+                        <li>User interface design received highly positive sentiment (85% positive)</li>
+                        <li>Sentiment trends showed clear improvement cycles aligned with product updates</li>
+                        <li>Regional variations in sentiment highlighted localization issues in certain markets</li>
+                    </ul>
+                    
+                    <h2>Business Recommendations</h2>
+                    <p>Based on the analysis, I provided the client with actionable recommendations:</p>
+                    <ol>
+                        <li>Prioritize battery optimization in the next product update</li>
+                        <li>Leverage the positively-received UI designs across other product lines</li>
+                        <li>Address specific localization issues in Asian markets</li>
+                        <li>Implement a continuous feedback loop using the sentiment dashboard</li>
+                    </ol>
+                    
+                    <h2>Conclusions</h2>
+                    <p>This project demonstrated the power of NLP and sentiment analysis in transforming unstructured customer feedback into actionable business insights. The dashboard continues to serve as a key decision-making tool for product development and customer experience teams.</p>
+                </div>
+            </div>
+
+            <div class="back-to-projects">
+                <a href="../index.html#projects" class="btn secondary-btn"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><img src="../images/logo.png" alt="Pratika Bihari Logo"></div>
+                <p>&copy; 2023 Pratika Bihari. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#projects">Projects</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html> 
